@@ -18,7 +18,7 @@ class EnvEmuModule(wishful_module.AgentModule):
         self.log = logging.getLogger('EnvEmuModule')
         self.ee_connected = False
         try:
-            ee_node_output = subprocess.check_output(["ls /dev/ee"], universal_newlines=True).strip()
+            ee_node_output = subprocess.check_output(["ls","/dev/ee"], universal_newlines=True).strip()
         except FileNotFoundError:
             ee_node_output = ""
         if "/dev/ee" in ee_node_output:
